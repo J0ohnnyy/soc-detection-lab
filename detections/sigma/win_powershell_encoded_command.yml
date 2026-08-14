@@ -7,7 +7,7 @@ description: >
   inspection.
 references:
   - https://attack.mitre.org/techniques/T1059/001/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.execution
