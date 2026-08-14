@@ -1,0 +1,34 @@
+title: Lateral Movement Connection (SMB / RDP / WinRM)
+id: 6f7a8b9c-0d1e-4f2a-3b4c-5d6e7f8a9b0c
+status: experimental
+description: >
+  Hunting rule: outbound connections to remote-service ports (SMB 445, RDP 3389,
+  WinRM 5985/5986) initiated by processes that are not the expected clients.
+  Meant to be correlated per source host, not alerted blindly.
+references:
+  - https://attack.mitre.org/techniques/T1021/
+author: Karim EL HAOURATI
+date: 2026/08/14
+tags:
+  - attack.lateral_movement
+  - attack.t1021.001
+  - attack.t1021.002
+logsource:
+  category: network_connection
+  product: windows
+detection:
+  selection:
+    Initiated: 'true'
+    DestinationPort:
+      - 445
+      - 3389
+      - 5985
+      - 5986
+  filter_expected:
+    Image|endswith:
+      - '\mstsc.exe'
+      - '\explorer.exe'
+  condition: selection and not filter_expected
+falsepositives:
+  - Administrative tools and file browsing; tune filter_expected to your environment
+level: low

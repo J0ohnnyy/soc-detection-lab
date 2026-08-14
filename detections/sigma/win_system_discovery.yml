@@ -1,0 +1,31 @@
+title: System and Account Discovery Commands
+id: 2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e
+status: experimental
+description: >
+  Detects native discovery utilities frequently run early in an intrusion
+  (whoami, systeminfo, net, nltest). Best used as a low-severity hunting signal,
+  correlated over a short time window per host.
+references:
+  - https://attack.mitre.org/techniques/T1082/
+  - https://attack.mitre.org/techniques/T1033/
+author: Karim EL HAOURATI
+date: 2026/08/14
+tags:
+  - attack.discovery
+  - attack.t1082
+  - attack.t1033
+  - attack.t1016
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith:
+      - '\whoami.exe'
+      - '\systeminfo.exe'
+      - '\nltest.exe'
+      - '\ipconfig.exe'
+  condition: selection
+falsepositives:
+  - Administrators and support staff running diagnostics
+level: low

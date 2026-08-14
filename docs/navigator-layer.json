@@ -1,0 +1,38 @@
+{
+  "name": "SOC Detection Lab — Coverage",
+  "versions": { "attack": "15", "navigator": "4.9.5", "layer": "4.5" },
+  "domain": "enterprise-attack",
+  "description": "Detection coverage for soc-detection-lab (Karim EL HAOURATI). Score 50 = Sigma/Wazuh rule written, validation pending; 90 = emulated & validated.",
+  "sorting": 0,
+  "layout": { "layout": "side", "showID": true, "showName": true },
+  "hideDisabled": false,
+  "techniques": [
+    { "techniqueID": "T1059.001", "score": 50, "comment": "win_powershell_encoded_command.yml + Wazuh 100100" },
+    { "techniqueID": "T1082", "score": 50, "comment": "win_system_discovery.yml" },
+    { "techniqueID": "T1033", "score": 50, "comment": "win_system_discovery.yml" },
+    { "techniqueID": "T1016", "score": 50, "comment": "win_system_discovery.yml" },
+    { "techniqueID": "T1105", "score": 50, "comment": "win_ingress_tool_transfer_certutil.yml + Wazuh 100104" },
+    { "techniqueID": "T1003.001", "score": 50, "comment": "win_lsass_access_credential_dumping.yml + Wazuh 100101" },
+    { "techniqueID": "T1547.001", "score": 50, "comment": "win_registry_run_key_persistence.yml + Wazuh 100102" },
+    { "techniqueID": "T1053.005", "score": 50, "comment": "win_scheduled_task_creation.yml + Wazuh 100103" },
+    { "techniqueID": "T1136.001", "score": 50, "comment": "win_local_account_creation.yml + Wazuh 100106" },
+    { "techniqueID": "T1021.001", "score": 30, "comment": "win_lateral_movement_connection.yml (hunting)" },
+    { "techniqueID": "T1021.002", "score": 30, "comment": "win_lateral_movement_connection.yml (hunting)" },
+    { "techniqueID": "T1070.001", "score": 50, "comment": "win_clear_eventlog.yml + Wazuh 100105" },
+    { "techniqueID": "T1055", "score": 10, "comment": "planned" }
+  ],
+  "gradient": {
+    "colors": ["#e6e6e6ff", "#ffe766ff", "#8ec843ff"],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    { "label": "Planned (0-20)", "color": "#e6e6e6ff" },
+    { "label": "Rule written, validation pending (~50)", "color": "#ffe766ff" },
+    { "label": "Emulated & validated (~90)", "color": "#8ec843ff" }
+  ],
+  "showTacticRowBackground": true,
+  "tacticRowBackground": "#205b8f",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false
+}
