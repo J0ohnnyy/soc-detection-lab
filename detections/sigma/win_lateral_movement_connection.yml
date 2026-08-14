@@ -7,7 +7,7 @@ description: >
   Meant to be correlated per source host, not alerted blindly.
 references:
   - https://attack.mitre.org/techniques/T1021/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.lateral_movement

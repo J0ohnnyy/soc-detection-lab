@@ -4,7 +4,7 @@ status: experimental
 description: Detects local account creation via "net user /add", often used for persistence or backdoor access.
 references:
   - https://attack.mitre.org/techniques/T1136/001/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.persistence

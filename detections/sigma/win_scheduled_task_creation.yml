@@ -4,7 +4,7 @@ status: experimental
 description: Detects creation of a scheduled task via schtasks.exe /create, used for persistence or execution.
 references:
   - https://attack.mitre.org/techniques/T1053/005/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.persistence

@@ -8,7 +8,7 @@ description: >
 references:
   - https://attack.mitre.org/techniques/T1082/
   - https://attack.mitre.org/techniques/T1033/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.discovery

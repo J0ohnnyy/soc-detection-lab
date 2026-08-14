@@ -4,7 +4,7 @@ status: experimental
 description: Detects clearing of Windows event logs via wevtutil or PowerShell, a common anti-forensic / defense-evasion action.
 references:
   - https://attack.mitre.org/techniques/T1070/001/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.defense_evasion
