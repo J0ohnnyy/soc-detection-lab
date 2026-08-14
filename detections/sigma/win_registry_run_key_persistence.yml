@@ -6,7 +6,7 @@ description: >
   persistence mechanism. Relies on Sysmon Event ID 13 (RegistryEvent - value set).
 references:
   - https://attack.mitre.org/techniques/T1547/001/
-author: Karim EL HAOURATI
+author: Karim
 date: 2026/08/14
 tags:
   - attack.persistence
