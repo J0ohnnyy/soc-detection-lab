@@ -1,0 +1,7 @@
+# Local lab artifacts (do not commit raw logs / exports with real data)
+*.evtx
+*.pcap
+*.log
+raw-logs/
+exports/
+.env

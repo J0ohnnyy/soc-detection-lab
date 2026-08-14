@@ -1,0 +1,26 @@
+title: Registry Run Key Persistence
+id: 7f2b9d1a-6c34-4e58-9a2b-1d0c3e4f5a6b
+status: experimental
+description: >
+  Detects creation or modification of autorun Registry "Run"/"RunOnce" keys, a common
+  persistence mechanism. Relies on Sysmon Event ID 13 (RegistryEvent - value set).
+references:
+  - https://attack.mitre.org/techniques/T1547/001/
+author: Karim EL HAOURATI
+date: 2026/08/14
+tags:
+  - attack.persistence
+  - attack.t1547.001
+logsource:
+  category: registry_set
+  product: windows
+detection:
+  selection:
+    TargetObject|contains:
+      - '\Software\Microsoft\Windows\CurrentVersion\Run\'
+      - '\Software\Microsoft\Windows\CurrentVersion\RunOnce\'
+      - '\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run\'
+  condition: selection
+falsepositives:
+  - Legitimate software registering a startup entry during install/update
+level: medium
