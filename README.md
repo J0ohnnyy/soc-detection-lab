@@ -59,13 +59,20 @@ soc-detection-lab/
 └── docs/                # Architecture, guide de setup, matrice de couverture ATT&CK
 ```
 
-## 🛡️ Détections déjà écrites
+## 🛡️ Détections déjà écrites & validées
 
-| Règle | Technique ATT&CK | Source |
-|---|---|---|
-| [PowerShell encoded command](detections/sigma/win_powershell_encoded_command.yml) | T1059.001 | Sysmon EID 1 |
-| [LSASS access (credential dumping)](detections/sigma/win_lsass_access_credential_dumping.yml) | T1003.001 | Sysmon EID 10 |
-| [Registry Run key persistence](detections/sigma/win_registry_run_key_persistence.yml) | T1547.001 | Sysmon EID 13 |
+| Règle | Technique ATT&CK | Source | Statut |
+|---|---|---|---|
+| [PowerShell encoded command](detections/sigma/win_powershell_encoded_command.yml) | T1059.001 | Sysmon EID 1 | ✅ validé |
+| [LSASS access (credential dumping)](detections/sigma/win_lsass_access_credential_dumping.yml) | T1003.001 | Sysmon EID 10 | ✅ validé |
+| [Registry Run key persistence](detections/sigma/win_registry_run_key_persistence.yml) | T1547.001 | Sysmon EID 13 | ✅ validé |
+| Scheduled task creation | T1053.005 | Sysmon EID 1 | ✅ validé |
+| Local account creation | T1136.001 | Sysmon EID 1 | ✅ validé |
+| Clear Windows event logs | T1070.001 | Sysmon EID 1 | ✅ validé |
+| Ingress tool transfer (certutil) | T1105 | Sysmon EID 1 | 🟡 bloqué par Defender dans ce lab |
+
+`scenario-01` rejoué de bout en bout : 6/7 techniques détectées, 3 règles corrigées en cours de
+validation (voir [investigation](investigations/2026-08-23-scenario-01-chained-intrusion.md)).
 
 ➡️ Couverture suivie dans [`docs/attack-coverage.md`](docs/attack-coverage.md).
 
